@@ -7,7 +7,7 @@ import PatientsContent from "./PatientsContent";
 import AppointmentsContent from "./AppointmentsContent";
 import StaffContent from "./StaffContent";
 import InventoryContent from "./InventoryContent";
-import BranchesContent from "./BranchesContent";
+import BranchesContent from "../components/BranchesContent";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const TabNavigation = () => {
@@ -19,7 +19,6 @@ const TabNavigation = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header branches={branches} />
 
       <main className="container mx-auto px-4 py-6">
         <Tabs defaultValue="dashboard" className="space-y-6">
@@ -33,22 +32,22 @@ const TabNavigation = () => {
           </TabsList>
 
           <TabsContent value="dashboard">
-            <DashboardContent branches={branches} />
+            <DashboardContent />
           </TabsContent>
           <TabsContent value="patients">
-            <PatientsContent branches={branches} />
+            <PatientsContent  />
           </TabsContent>
           <TabsContent value="appointments">
-            <AppointmentsContent branches={branches} />
+            <AppointmentsContent  />
           </TabsContent>
           <TabsContent value="staff">
-            <StaffContent branches={branches} />
+            <StaffContent  />
           </TabsContent>
           <TabsContent value="inventory">
-            <InventoryContent branches={branches} />
+            <InventoryContent  />
           </TabsContent>
           <TabsContent value="branches">
-            <BranchesContent branches={branches} />
+            <BranchesContent  />
           </TabsContent>
         </Tabs>
       </main>

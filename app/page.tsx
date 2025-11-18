@@ -1,17 +1,29 @@
-// app/page.tsx
-import React from "react";
-import TabNavigation from "./components/TabNavigation";
-import Header from "./components/Header";
+"use client";
 
-export const metadata = {
-  title: "ClinicCare Dashboard",
-  description: "Multi-Branch Clinic Management System",
-};
+import { useState, useEffect } from "react";
+import Header, { Branch } from "./components/Header";
+import TabNavigation from "./components/TabNavigation"; // make sure this exists
 
 export default function HomePage() {
+  // ✅ State for branches
+  const [branches, setBranches] = useState<Branch[]>([]);
+
+  useEffect(() => {
+    // ✅ Replace with API/DB fetch later
+    const fetchedBranches: Branch[] = [
+      { id: "1", name: "Main Branch" },
+      { id: "2", name: "North Wing" },
+    ];
+
+    setBranches(fetchedBranches);
+  }, []);
+
   return (
     <main className="min-h-screen bg-gray-50">
-      
+      {/* Header with branches */}
+      <Header branches={branches} />
+
+      {/* Example TabNavigation component */}
       <TabNavigation />
     </main>
   );
