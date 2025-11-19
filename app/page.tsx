@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -25,6 +27,7 @@ export default function HomePage() {
 
       {/* Example TabNavigation component */}
       <TabNavigation />
+
     </main>
   );
 }
